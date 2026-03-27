@@ -27,6 +27,8 @@ jobs:
           git checkout main
           git merge upstream/main --no-edit
           git push origin main
-      - name: 推送到你的 Gitee 仓库
+      - name: 推送到 Gitee
         run: |
-          git push https://${{ secrets.GITEE_TOKEN }}@gitee.com/scarylb/FactoryBluePrints.git main -f
+          echo "https://scarylb:${{ secrets.GITEE_TOKEN }}@gitee.com" > ~/.git-credentials
+          git config --global credential.helper store
+          git push https://gitee.com/scarylb/FactoryBluePrints.git main -f
