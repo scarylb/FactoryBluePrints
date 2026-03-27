@@ -29,5 +29,4 @@ jobs:
           git push origin main
       - name: 推送到你的 Gitee 仓库
         run: |
-          git remote add gitee https://${{ secrets.GITEE_TOKEN }}@gitee.com/scarylb/FactoryBluePrints.git
-          git push gitee main -f
+          git push https://${{ secrets.GITEE_TOKEN }}@gitee.com/scarylb/FactoryBluePrints.git main -f
